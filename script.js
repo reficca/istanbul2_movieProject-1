@@ -8,6 +8,7 @@ const CONTAINER = document.querySelector(".container");
 // Don't touch this function please
 const autorun = async () => {
   const movies = await fetchMovies();
+  console.log(movies)
   renderMovies(movies.results);
 };
 
@@ -40,6 +41,7 @@ const fetchMovie = async (movieId) => {
 
 // You'll need to play with this function in order to add features and enhance the style.
 const renderMovies = (movies) => {
+  CONTAINER.innerText = "";
   movies.map((movie) => {
     const movieDiv = document.createElement("div");
     movieDiv.innerHTML = `
@@ -53,6 +55,8 @@ const renderMovies = (movies) => {
     CONTAINER.appendChild(movieDiv);
   });
 };
+
+
 
 // You'll need to play with this function in order to add features and enhance the style.
 const renderMovie = (movie) => {
@@ -78,4 +82,27 @@ const renderMovie = (movie) => {
     </div>`;
 };
 
+////////
+const filterMoviesByGenre = (movies, genreId) => {
+  return movies.filter(movie => {
+    console.log(movie["genre_ids"])
+    return movie["genre_ids"].indexOf(genreId) >= 0;
+  });
+};
+////////
+
 document.addEventListener("DOMContentLoaded", autorun);
+
+///////////
+let navbarHome = document.getElementById("navbar-home");
+navbarHome.addEventListener("click", autorun);
+
+let genreDropdown = document.querySelectorAll("#genre-dropdown .dropdown-item");
+genreDropdown.forEach(element => {
+  element.addEventListener("click", e => {
+    const moviesObj = fetchMovies();
+    let genreId = parseInt(element.getAttribute("genre-id"), 10);
+    moviesObj.then(obj => filterMoviesByGenre(obj["results"], genreId)).then(renderMovies)
+  });
+});
+///////////

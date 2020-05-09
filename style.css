@@ -9,3 +9,16 @@
 #actors {
     margin: 24px 16px 0 0;
 }
+
+.footer {
+    margin: 25px;
+}
+
+.footer img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.dropdown-item {
+    display: block;
+}

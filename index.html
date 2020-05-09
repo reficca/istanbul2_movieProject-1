@@ -3,15 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Movie</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a id="navbar-home" class="navbar-home">MOVIE PROJECT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              MOVIES
+            </a>
+
+            <div id="genre-dropdown">
+              <a class="dropdown-item" genre-id="28">Action</a>
+              <a class="dropdown-item" genre-id="12">Adventure</a>
+              <a class="dropdown-item" genre-id="16">Animation</a>
+              <a class="dropdown-item" genre-id="35">Comedy</a>
+              <a class="dropdown-item" genre-id="80">Crime</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>Disabled</a>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    
     <div class="container">
     </div>
+
+    <footer class="footer">
+      <div class="footer-container"></div>
+        <span class="text-muted">Made with hard work by 
+            <a href="https://github.com/reficca">
+              <img src="./githublogo.png" alt="Github logo">
+            </a>Refia & 
+
+            <a href="https://github.com/ttugba">
+              <img src="./githublogo.png" alt="Github logo">
+            </a> Tugba
+        </span>
+      </div>
+    </footer>
     <script type="text/javascript" src="script.js"></script>
 </body>
 
